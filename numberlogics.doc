@@ -1,0 +1,2379 @@
+****sum of n numbers****
+
+import java.util.*;
+class HelloWorld {
+    public static int sum( int n)
+    {
+        int res=0;
+        for(int i=1;i<=n;i++)
+        {
+            res=res+i;
+        }
+        return res;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=sum(n);
+       System.out.println(res);
+    }
+}
+----------------------------------------------------------------------------------
+
+factorial**********
+
+
+import java.util.*;
+class HelloWorld {
+    public static int fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=fact(n);
+       System.out.println(res);
+    }
+}
+
+-------------------------------------------------------------------------------
+
+
+1/n!*******************
+
+import java.util.*;
+class HelloWorld {
+    public static int fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       double res=1.0/fact(n);
+       System.out.printf("%.4f",res);
+    }
+}
+
+---------------------------------------------------------------------------------
+
+
+power()
+
+
+import java.util.*;
+class HelloWorld {
+    public static int power(int x,int n)
+    {
+        if(n==0)
+        return 1;
+        int res=1;
+        for(int i=1;i<=n;i++)
+        {
+            res=res*x;
+        }
+        return res;
+    }
+    
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int x=sc.nextInt();
+       int n=sc.nextInt();
+       int res=power(x,n);
+       System.out.println(res);
+    }
+}
+
+
+------------------------------------------------------------------------------------
+
+x^n/n!********************
+
+import java.util.*;
+class HelloWorld {
+    public static double power(int x,int n)
+    {
+        if(n==0)
+        return 1;
+        int res=1;
+        for(int i=1;i<=n;i++)
+        {
+            res=res*x;
+        }
+        return res;
+    }
+     public static double fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int x=sc.nextInt();
+       int n=sc.nextInt();
+       double res=power(x,n)/fact(n);
+       System.out.printf("%.4f",res);
+    }
+}
+-------------------------------------------------------------------------------
+
+count of a digits in a number
+
+
+import java.util.*;
+class HelloWorld {
+
+    public static int count(int n)
+    {
+        int c=0;
+        if(n<0)
+        n=-n;
+        while(n>0)
+        {
+            n=n/10;
+            c++;
+        }
+        return c;
+    }
+    
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      
+       int n=sc.nextInt();
+     int res=count(n);
+       System.out.println(res);
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+factors***********************
+
+
+import java.util.*;
+class HelloWorld {
+public static int[] factors(int n)
+{
+    int a[]=new int[n];
+    int c=0;
+    for(int i=1;i<=n;i++)
+    {
+        
+        if(n%i==0)
+        {
+            a[c]=i;
+            c++;
+        }
+    }
+    int res[]=new int[c];
+    for(int i=0;i<c;i++)
+    res[i]=a[i];
+    return res;
+}
+  
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      
+       int n=sc.nextInt();
+       int res[]=factors(n);
+       for(int i:res)
+       System.out.print(i+" ");
+    }
+}
+------------------------------------------------------------------------------------------
+
+prime factors*********************
+
+
+import java.util.*;
+
+class HelloWorld {
+    public static int[] factors(int n)
+    {
+        int[] a = new int[n];
+        int c = 0;
+        boolean flag;
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                if (i > 1)
+                {
+                    flag = true;
+                    for (int j = 2; j <= i / 2; j++) 
+                    {
+                        if (i % j == 0) 
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                } 
+                else
+                {
+                    flag = false;
+                }
+                if (flag) 
+                {
+                    a[c] = i;
+                    c++;
+                }
+            }
+        }
+
+        int[] res = new int[c];
+        for (int k = 0; k < c; k++)
+        {
+            res[k] = a[k];
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] res = factors(n);
+        for (int i : res) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+reverse***************
+
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int reverse(int n)
+    {
+        int rev=0;
+        if(n<0)
+        {
+            n=-n;
+            while(n!=0)
+            {
+                rev=rev*10+n%10;
+                n=n/10;
+             }
+        return -rev;
+        }
+        while(n!=0)
+        {
+        rev=rev*10+n%10;
+        n=n/10;
+       }
+        return rev;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=reverse(n);
+       System.out.println(res);
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------
+
+
+palindrome**********************
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int reverse(int n)
+    {
+        int rev=0;
+        if(n<0)
+        {
+            n=-n;
+            while(n!=0)
+            {
+                rev=rev*10+n%10;
+                n=n/10;
+             }
+        return -rev;
+        }
+        while(n!=0)
+        {
+        rev=rev*10+n%10;
+        n=n/10;
+       }
+        return rev;
+    }
+    
+    public static int palindrome(int n)
+    {
+        if(n==reverse(n))
+        return 1;
+        else
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       if(palindrome(n)==1)
+       System.out.println("PALINDROME");
+       else
+       System.out.println(" NOT A PALINDROME");
+    }
+}
+
+--------------------------------------------------------------------------------------------------------
+
+
+range of palindromes**********************
+
+import java.util.*;
+class HelloWorld {
+    public static int reverse(int n)
+    {
+        int rev=0;
+        if(n<0)
+        {
+            n=-n;
+            while(n!=0)
+            {
+                rev=rev*10+n%10;
+                n=n/10;
+             }
+        return -rev;
+        }
+        while(n!=0)
+        {
+        rev=rev*10+n%10;
+        n=n/10;
+       }
+        return rev;
+    }
+    
+    public static int palindrome(int n)
+    {
+        if(n==reverse(n))
+        return 1;
+        else
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int min=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(palindrome(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+-----------------------------------------------------------------------------------------------------
+
+Nth palindrome number**************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int reverse(int n)
+    {
+        int rev=0;
+        if(n<0)
+        {
+            n=-n;
+            while(n!=0)
+            {
+                rev=rev*10+n%10;
+                n=n/10;
+             }
+        return -rev;
+        }
+        while(n!=0)
+        {
+        rev=rev*10+n%10;
+        n=n/10;
+       }
+        return rev;
+    }
+    
+    public static int palindrome(int n)
+    {
+        if(n==reverse(n))
+        return 1;
+        else
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(palindrome(i)==1)
+          c++;
+          if(c==n){
+          System.out.print(i+" ");
+          break;
+              
+          }
+          
+      }
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+prime number************
+
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int prime(int n)
+    {
+        boolean flag=true;
+        if(n==1||n==0)
+        return 0;
+        if(n==2)
+        return 1;
+        if(n%2==0)
+        return 0;
+        for(int i=3;i<n/2;i++)
+        {
+            if(n%i==0)
+            {
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+        return 1;
+    return 0;
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=prime(n);
+       if(res==1)
+       System.out.println("PRIME");
+       else
+       System.out.println("NOT A PRIME");
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+Range of primes*********************
+
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int prime(int n)
+    {
+        boolean flag=true;
+        if(n==1||n==0)
+        return 0;
+        if(n==2)
+        return 1;
+        if(n%2==0)
+        return 0;
+        for(int i=3;i<n/2;i++)
+        {
+            if(n%i==0)
+            {
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+        return 1;
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int max=sc.nextInt();
+       for(int i=min;i<=max;i++)
+       {
+           if(prime(i)==1)
+           {
+               System.out.print(i+" ");
+           }
+       }
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+Nth prime*******************
+
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int prime(int n)
+    {
+        boolean flag=true;
+        if(n==1||n==0)
+        return 0;
+        if(n==2)
+        return 1;
+        if(n%2==0)
+        return 0;
+        for(int i=3;i<n/2;i++)
+        {
+            if(n%i==0)
+            {
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+        return 1;
+    return 0;
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int c=0;
+       for(int i=1;i<=Integer.MAX_VALUE;i++)
+       {
+           if(prime(i)==1)
+           {
+               c++;
+               if(n==c)
+               {
+               System.out.print(i+" ");
+               break;
+                   
+               }
+           }
+       }
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+perfect square***********
+
+
+import java.util.*;
+class HelloWorld {
+    public static int perfect(int n)
+    {
+        if(n==1||n==0)
+        return 1;
+        for(int i=2;i<n;i++)
+        {
+            int res=i*i;
+            if(res==n)
+            return 1;
+        }
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=perfect(n);
+       if(res==1)
+       System.out.println("PERFECT SQUARE");
+       else
+       System.out.println("NOT A PERFECT SQUARE");
+    }
+}
+
+--------------------------------------------------------------------------------------------------
+
+range of perfect squares*************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int perfect(int n)
+    {
+        if(n==1||n==0)
+        return 1;
+        for(int i=2;i<n;i++)
+        {
+            int res=i*i;
+            if(res==n)
+            return 1;
+        }
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(perfect(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+Nth perfect squares*********************
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int perfect(int n)
+    {
+        if(n==1||n==0)
+        return 1;
+        for(int i=2;i<n;i++)
+        {
+            int res=i*i;
+            if(res==n)
+            return 1;
+        }
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(perfect(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------
+
+
+armstrong number*************************
+
+
+import java.util.*;
+class HelloWorld {
+        public static int power(int x,int n)
+    {
+        if(n==0)
+        return 1;
+        int res=1;
+        for(int i=1;i<=n;i++)
+        {
+            res=res*x;
+        }
+        return res;
+    }
+     public static int count(int n)
+    {
+        int c=0;
+        if(n<0)
+        n=-n;
+        while(n>0)
+        {
+            n=n/10;
+            c++;
+        }
+        return c;
+    }
+    
+    public static int armstrong(int n)
+    {
+        int temp=n;
+        int res=0;
+        int c=count(n);
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+power(rem,c);
+            n=n/10;
+        }
+        if(res==temp)
+        return 1;
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=armstrong(n);
+       if(res==1)
+       System.out.println("ARMSTRONG NUMBER");
+       else
+        System.out.println("NOT A ARMSTRONG NUMBER");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+range of armstrong numbers******************************
+
+
+
+import java.util.*;
+class HelloWorld {
+        public static int power(int x,int n)
+    {
+        if(n==0)
+        return 1;
+        int res=1;
+        for(int i=1;i<=n;i++)
+        {
+            res=res*x;
+        }
+        return res;
+    }
+     public static int count(int n)
+    {
+        int c=0;
+        if(n<0)
+        n=-n;
+        while(n>0)
+        {
+            n=n/10;
+            c++;
+        }
+        return c;
+    }
+    
+    public static int armstrong(int n)
+    {
+        int temp=n;
+        int res=0;
+        int c=count(n);
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+power(rem,c);
+            n=n/10;
+        }
+        if(res==temp)
+        return 1;
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(armstrong(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------
+
+Nth armstrong number******************
+
+
+import java.util.*;
+class HelloWorld {
+        public static int power(int x,int n)
+    {
+        if(n==0)
+        return 1;
+        int res=1;
+        for(int i=1;i<=n;i++)
+        {
+            res=res*x;
+        }
+        return res;
+    }
+     public static int count(int n)
+    {
+        int c=0;
+        if(n<0)
+        n=-n;
+        while(n>0)
+        {
+            n=n/10;
+            c++;
+        }
+        return c;
+    }
+    
+    public static int armstrong(int n)
+    {
+        int temp=n;
+        int res=0;
+        int c=count(n);
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+power(rem,c);
+            n=n/10;
+        }
+        if(res==temp)
+        return 1;
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(armstrong(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+strong number******************
+
+import java.util.*;
+class HelloWorld {
+        public static int fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    public static int strong(int n)
+    {
+        int temp=n;
+        int res=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+fact(rem);
+            n=n/10;
+        }
+        if(temp==res)
+        return 1;
+    return 0;
+        
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=strong(n);
+       if(res==1)
+       System.out.println("STRONG NUMBER");
+       else
+       System.out.println("NOT A STRONG NUMBER");
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+range of strong umbers***************************
+
+
+import java.util.*;
+class HelloWorld {
+        public static int fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    public static int strong(int n)
+    {
+        int temp=n;
+        int res=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+fact(rem);
+            n=n/10;
+        }
+        if(temp==res)
+        return 1;
+    return 0;
+        
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(strong(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
+
+Nth strong number****************
+
+import java.util.*;
+class HelloWorld {
+        public static int fact( int n)
+    {
+        int res=1;
+        for(int i=n;i>=1;i--)
+        {
+            res=res*i;
+        }
+        return res;
+    }
+    
+    
+    public static int strong(int n)
+    {
+        int temp=n;
+        int res=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            res=res+fact(rem);
+            n=n/10;
+        }
+        if(temp==res)
+        return 1;
+    return 0;
+        
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(strong(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+harshad number**********************
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int sum(int n)
+    {
+        int res=0;
+        while(n!=0)
+        {
+            res=res+n%10;
+            n=n/10;
+        }
+        return res;
+    }
+    public static int harshad(int n)
+    {
+        int s=sum(n);
+        return (n%s==0)?1:0;
+        
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=harshad(n);
+       if(res==1)
+       System.out.println("HARSHAD NUMBER");
+       else
+       System.out.println("NOT A HARSHAD NUMBER");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+range of harshad numbers******************
+
+import java.util.*;
+class HelloWorld {
+    public static int sum(int n)
+    {
+        int res=0;
+        while(n!=0)
+        {
+            res=res+n%10;
+            n=n/10;
+        }
+        return res;
+    }
+    public static int harshad(int n)
+    {
+        int s=sum(n);
+        return (n%s==0)?1:0;
+        
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(harshad(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nth harshad number****************************
+
+import java.util.*;
+class HelloWorld {
+    public static int sum(int n)
+    {
+        int res=0;
+        while(n!=0)
+        {
+            res=res+n%10;
+            n=n/10;
+        }
+        return res;
+    }
+    public static int harshad(int n)
+    {
+        int s=sum(n);
+        return (n%s==0)?1:0;
+        
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(harshad(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+abudant number*************************
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int[] factors(int n)
+{
+    int a[]=new int[n];
+    int c=0;
+    for(int i=1;i<=n;i++)
+    {
+        
+        if(n%i==0)
+        {
+            a[c]=i;
+            c++;
+        }
+    }
+    int res[]=new int[c];
+    for(int i=0;i<c;i++)
+    res[i]=a[i];
+    return res;
+}
+public static int abudant(int n)
+{
+    int res[]=factors(n);
+    int sum=0;
+    for(int i=0;i<res.length-1;i++)
+    {
+        sum=sum+res[i];
+    }
+    return (sum>n)?1:0;
+}
+
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=abudant(n);
+       if(res==1)
+       System.out.println("ABUDANT NUMBER");
+       else
+       System.out.println("NOT A ABUDANT NUMBER");
+
+
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+range of abudant numbers*********************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int[] factors(int n)
+{
+    int a[]=new int[n];
+    int c=0;
+    for(int i=1;i<=n;i++)
+    {
+        
+        if(n%i==0)
+        {
+            a[c]=i;
+            c++;
+        }
+    }
+    int res[]=new int[c];
+    for(int i=0;i<c;i++)
+    res[i]=a[i];
+    return res;
+}
+public static int abudant(int n)
+{
+    int res[]=factors(n);
+    int sum=0;
+    for(int i=0;i<res.length-1;i++)
+    {
+        sum=sum+res[i];
+    }
+    return (sum>n)?1:0;
+}
+
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(abudant(i)==1)
+          System.out.print(i+" ");
+      }
+
+
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Nth abudant number********************************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int[] factors(int n)
+{
+    int a[]=new int[n];
+    int c=0;
+    for(int i=1;i<=n;i++)
+    {
+        
+        if(n%i==0)
+        {
+            a[c]=i;
+            c++;
+        }
+    }
+    int res[]=new int[c];
+    for(int i=0;i<c;i++)
+    res[i]=a[i];
+    return res;
+}
+public static int abudant(int n)
+{
+    int res[]=factors(n);
+    int sum=0;
+    for(int i=0;i<res.length-1;i++)
+    {
+        sum=sum+res[i];
+    }
+    return (sum>n)?1:0;
+}
+
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(abudant(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+
+
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+automorphic number********************
+
+
+import java.util.*;
+class HelloWorld {
+    public static long auto(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       long res=auto(n);
+          if(res==1)
+       System.out.println("AUTOMORHIC NUMBER");
+       else
+       System.out.println("NOT A AUTOMORHIC NUMBER");
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+range of automorphic numbers******************
+
+
+import java.util.*;
+class HelloWorld {
+    public static long auto(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(auto(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nth automorphic number************************
+
+
+import java.util.*;
+class HelloWorld {
+    public static long auto(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(auto(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+MAGIC NUMBER****************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int magic(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+        if(sum>9)
+        return magic(sum);
+    return sum;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=magic(n);
+       if(res==1)
+       System.out.println("MAGIC NUMBER");
+       else
+       System.out.println("NOT A MAGIC NUMBER");
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+range of magic numbers*************************
+
+
+import java.util.*;
+class HelloWorld {
+    public static int magic(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+        if(sum>9)
+        return magic(sum);
+    return sum;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(magic(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Nth magic number********************************
+
+
+
+import java.util.*;
+class HelloWorld {
+    public static int magic(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+        if(sum>9)
+        return magic(sum);
+    return sum;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(magic(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------
+
+friendly pair*******************************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static double friend(int n)
+    {
+       
+       int sum=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            sum=sum+i;
+        }
+        return sum/n;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int m=sc.nextInt();
+       double res=friend(n);
+       double res1=friend(m);
+       if(res==res1)
+       System.out.println("FRIENDLY PAIR");
+       else
+       System.out.println("NOT A FRIENDLY PAIR");
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+neon number************************************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int neon(int n)
+    {
+        
+        int r=n*n;
+        int sum=0;
+        while(r!=0)
+        {
+            sum=sum+r%10;
+            r=r/10;
+        }
+        return (sum==n)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=neon(n);
+       if(res==1)
+       System.out.println("NEON NUMBER");
+       else
+       System.out.println("NOT A NEON NUMBER");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+range of neon numbers***************************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int neon(int n)
+    {
+        
+        int r=n*n;
+        int sum=0;
+        while(r!=0)
+        {
+            sum=sum+r%10;
+            r=r/10;
+        }
+        return (sum==n)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(neon(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nth neon number********************************
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int neon(int n)
+    {
+        
+        int r=n*n;
+        int sum=0;
+        while(r!=0)
+        {
+            sum=sum+r%10;
+            r=r/10;
+        }
+        return (sum==n)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(neon(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+
+
+spy number************************************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int spy(int n)
+    {
+        int temp=n;
+        int sum=0;
+         while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+       int sum1=1;
+       n=temp;
+         while(n!=0)
+        {
+            sum1=sum1*n%10;
+            n=n/10;
+        }
+        return (sum==sum1)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=spy(n);
+        if(res==1)
+       System.out.println("SPY NUMBER");
+       else
+       System.out.println("NOT A SPY NUMBER");
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+
+
+range of spy numbers*********************
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int spy(int n)
+    {
+        int temp=n;
+        int sum=0;
+         while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+       int sum1=1;
+       n=temp;
+         while(n!=0)
+        {
+            sum1=sum1*n%10;
+            n=n/10;
+        }
+        return (sum==sum1)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(spy(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+
+Nth spy number**********************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int spy(int n)
+    {
+        int temp=n;
+        int sum=0;
+         while(n!=0)
+        {
+            sum=sum+n%10;
+            n=n/10;
+        }
+       int sum1=1;
+       n=temp;
+         while(n!=0)
+        {
+            sum1=sum1*n%10;
+            n=n/10;
+        }
+        return (sum==sum1)?1:0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+    int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(spy(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------
+
+happy number**********************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int happy(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            sum=sum+rem*rem;
+            n=n/10;
+        }
+        if(sum<9)
+        return (sum==1)?1:0;
+        else
+        return happy(sum);
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=happy(n);
+       if(res==1)
+       System.out.println("HAPPY NUMBER");
+       else
+       System.out.println("NOT A HAPPY NUMBER");
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+
+range of happynumbers*************************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int happy(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            sum=sum+rem*rem;
+            n=n/10;
+        }
+        if(sum<9)
+        return (sum==1)?1:0;
+        else
+        return happy(sum);
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(happy(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+
+Nth happy number********************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int happy(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            int rem=n%10;
+            sum=sum+rem*rem;
+            n=n/10;
+        }
+        if(sum<9)
+        return (sum==1)?1:0;
+        else
+        return happy(sum);
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(happy(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------
+
+sunny number*****************
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int sunny(int n)
+    {
+        int m=n+1;
+        for(int i=1;i<=m;i++)
+        {
+            if(m==i*i)
+            return 1;
+        }
+        return 0;
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=sunny(n);
+          if(res==1)
+       System.out.println("SUNNY NUMBER");
+       else
+       System.out.println("NOT A SUNNY NUMBER");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+range of sunny numbers*************
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int sunny(int n)
+    {
+        if(n==0)
+        return 1;
+        int m=n+1;
+        for(int i=1;i<=m;i++)
+        {
+            if(m==i*i)
+            return 1;
+        }
+        return 0;
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(sunny(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+Nth sunny number*************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int sunny(int n)
+    {
+        if(n==0)
+        return 1;
+        int m=n+1;
+        for(int i=1;i<=m;i++)
+        {
+            if(m==i*i)
+            return 1;
+        }
+        return 0;
+        
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(sunny(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+
+disarium number************
+
+
+import java.util.*;
+class HelloWorld {
+public static long dis(int n)
+{
+    int temp=n;
+    int c=0;
+    while(n!=0)
+    {
+        c++;
+        n=n/10;
+    }
+    n=temp;
+    long sum=0;
+    for(int i=c;i>=1;i--)
+    {
+        long div=(long)Math.pow(n%10,i);
+        sum=sum+div;
+        n=n/10;
+    }
+    return (sum==temp)?1:0;
+}
+
+    public static void main(String[] args)
+    {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     long res=dis(n);
+     if(res==1)
+     System.out.println("DISARIUM NUMBER");
+     else
+     System.out.println("NOT A DISARIUM NUMBER");
+    }
+}
+
+-------------------------------------------------------------------------------------
+
+range of diasrium numbers***********
+
+import java.util.*;
+class HelloWorld {
+public static long dis(int n)
+{
+    int temp=n;
+    int c=0;
+    while(n!=0)
+    {
+        c++;
+        n=n/10;
+    }
+    n=temp;
+    long sum=0;
+    for(int i=c;i>=1;i--)
+    {
+        long div=(long)Math.pow(n%10,i);
+        sum=sum+div;
+        n=n/10;
+    }
+    return (sum==temp)?1:0;
+}
+
+    public static void main(String[] args)
+    {
+     Scanner sc=new Scanner(System.in);
+     int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(dis(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+---------------------------------------------------------------------------------------
+
+Nth disarium number***********
+
+import java.util.*;
+class HelloWorld {
+public static long dis(int n)
+{
+    int temp=n;
+    int c=0;
+    while(n!=0)
+    {
+        c++;
+        n=n/10;
+    }
+    n=temp;
+    long sum=0;
+    for(int i=c;i>=1;i--)
+    {
+        long div=(long)Math.pow(n%10,i);
+        sum=sum+div;
+        n=n/10;
+    }
+    return (sum==temp)?1:0;
+}
+
+    public static void main(String[] args)
+    {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(dis(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+----------------------------------------------------------------------------------------
+
+pronic number*********
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int pronic(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            if(i*(i+1)==n)
+            return 1;
+        }
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       int res=pronic(n);
+       if(res==1)
+       System.out.println("PRONIC NUMBER");
+       else
+       System.out.println("NOT A PRONIC NUMBER");
+    }
+}
+
+--------------------------------------------------------------------------------
+
+range of pronic numbers***********
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int pronic(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            if(i*(i+1)==n)
+            return 1;
+        }
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(pronic(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+----------------------------------------------------------------------
+
+Nth pronic number**********
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static int pronic(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            if(i*(i+1)==n)
+            return 1;
+        }
+    return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(pronic(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+
+
+trimprphic number**********
+
+import java.util.*;
+class HelloWorld {
+    public static long tri(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       long res=tri(n);
+          if(res==1)
+       System.out.println("TRIMORHIC NUMBER");
+       else
+       System.out.println("NOT A TRIMORHIC NUMBER");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+range of trimorphic numbers***********
+
+
+import java.util.*;
+class HelloWorld {
+    public static long tri(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+      int min=sc.nextInt();
+       int max=sc.nextInt();
+      for(int i=min;i<=max;i++)
+      {
+          if(tri(i)==1)
+          System.out.print(i+" ");
+      }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------
+
+Nth trimorphic number************
+
+import java.util.*;
+class HelloWorld {
+    public static long tri(int n)
+    {
+        int temp=n;
+        int c=0;
+        while(n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+        n=temp;
+        long div= (long)Math.pow(10,c);
+        long res=(long)((n*n*n)%div);
+        return (temp==res)?1:0;
+    }
+    
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+     int n=sc.nextInt();
+       int c=0;
+      for(int i=1;i<=Integer.MAX_VALUE;i++)
+      {
+          if(tri(i)==1)
+          {
+              c++;
+          }
+          if(n==c)
+          {
+          System.out.print(i+" ");
+          break;
+          }
+      }
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+first n fibanocci numbers*************
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static void fib(int n)
+    {
+        if(n<0)
+        return;
+        int a=0;
+        int b=1;
+        if(n>=1)
+        System.out.print(a);
+        if(n>=2)
+        System.out.print(" "+b);
+        for(int i=2;i<n;i++)
+        {
+            int c=a+b;
+            System.out.print(" "+c);
+           a=b;
+           b=c;
+        }
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       fib(n);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------
+
+Nth fibanocci number*******************
+
+
+
+import java.util.*;
+class HelloWorld {
+    
+    public static long fib(int n)
+    {
+        if(n==1)
+        return 0;
+        if(n==2)
+        return 1;
+        long a=0;
+        long b=1;
+        long c=0;
+        for(int i=3;i<=n;i++)
+        {
+           c=a+b;
+           a=b;
+           b=c;
+        }
+        return c;
+    }
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       int n=sc.nextInt();
+       long res= fib(n);
+       System.out.println(res);
+    }
+}
+
+		              -------------------end----------------------
+
+
